@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Azure.Identity" Version="1.13.1" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.7.0" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.66.2" />
+    <PackageReference Include="MimeKit" Version="4.9.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="Serilog.Expressions" Version="5.0.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.2" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge.Application.Interface\Challenge.Application.Interface.csproj" />
+    <ProjectReference Include="..\Challenge.Application.Main\Challenge.Application.Main.csproj" />
+    <ProjectReference Include="..\Challenge.Domain.Core\Challenge.Domain.Core.csproj" />
+    <ProjectReference Include="..\Challenge.Domain.Interface\Challenge.Domain.Interface.csproj" />
+    <ProjectReference Include="..\Challenge.Infrastructure.Data\Challenge.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Challenge.Infrastructure.Interface\Challenge.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\Challenge.Infrastructure.Repository\Challenge.Infrastructure.Repository.csproj" />
+    <ProjectReference Include="..\Challenge.Transversal.Logging\Challenge.Transversal.Logging.csproj" />
+    <ProjectReference Include="..\Challenge.Transversal.Mapper\Challenge.Transversal.Mapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Hubs\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Models\Filters\" />
+    <Folder Include="Models\HubModels\" />
+    <Folder Include="wwwroot\Resources\" />
+  </ItemGroup>
+
+</Project>
