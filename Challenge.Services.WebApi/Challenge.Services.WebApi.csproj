@@ -46,7 +46,6 @@
   <ItemGroup>
     <Folder Include="Hubs\" />
     <Folder Include="Logs\" />
-    <Folder Include="Models\Filters\" />
     <Folder Include="Models\HubModels\" />
     <Folder Include="wwwroot\Resources\" />
   </ItemGroup>

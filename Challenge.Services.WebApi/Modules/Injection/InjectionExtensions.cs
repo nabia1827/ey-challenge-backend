@@ -26,7 +26,17 @@ namespace Challenge.Services.WebApi.Modules.Injection
             services.AddScoped<IAuthDomain, AuthDomain>();
             services.AddScoped<IAuthRepository, AuthRepository>();
 
-            
+            services.AddScoped<ISourceApplication, SourceApplication>();
+            services.AddScoped<ISourceDomain, SourceDomain>();
+            services.AddScoped<ISourceRepository, SourceRepository>();
+
+            services.AddScoped<ICountryApplication, CountryApplication>();
+            services.AddScoped<ICountryDomain, CountryDomain>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+
+            services.AddScoped<ISupplierApplication, SupplierApplication>();
+            services.AddScoped<ISupplierDomain, SupplierDomain>();
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
 
             services.AddScoped<IPasswordHasher, PasswordHasher>();
 

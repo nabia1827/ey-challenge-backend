@@ -10,11 +10,21 @@ namespace Challenge.Infrastructure.Repository
     public class UnitOfWork : IUnitOfWork
     {
         public IAuthRepository Auth { get; }
-        
 
-        public UnitOfWork(IAuthRepository authRepository)
+        public ISourceRepository Source { get; }
+
+        public ICountryRepository Country { get; }
+
+        public ISupplierRepository Supplier { get; }
+
+        public UnitOfWork(IAuthRepository authRepository, 
+            ISourceRepository sourceRepository, ICountryRepository countryRepository,
+            ISupplierRepository supplierRepository)
         {
             Auth = authRepository;
+            Source = sourceRepository;
+            Country = countryRepository;
+            Supplier = supplierRepository;
             
         }
     }
