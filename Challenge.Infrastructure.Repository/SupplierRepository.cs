@@ -61,9 +61,9 @@ namespace Challenge.Infrastructure.Repository
 
             using var connection = _context.CreateConnection();
 
-            var sql = "sp_ListCountries";
+            var sql = "sp_ListSuppliers";
 
-            var count = "sp_CountSuppliers";
+            
             var parameters = new DynamicParameters();
             parameters.Add("@offSet", (pagina - 1) * cantidadRegistros);
             parameters.Add("@pageSize", cantidadRegistros);
@@ -71,11 +71,20 @@ namespace Challenge.Infrastructure.Repository
             parameters.Add("@tradeName", tradeName);
             parameters.Add("@taxIdentNumber", taxIdentNumber);
             parameters.Add("@countryId", countryId);
-            parameters.Add("@countryId", initDate);
-            parameters.Add("@countryId", endDate);
+            parameters.Add("@initDate", initDate);
+            parameters.Add("@endDate", endDate);
+
+            var count = "sp_CountSuppliers";
+            var parameters2 = new DynamicParameters();
+            parameters2.Add("@legalName", legalName);
+            parameters2.Add("@tradeName", tradeName);
+            parameters2.Add("@taxIdentNumber", taxIdentNumber);
+            parameters2.Add("@countryId", countryId);
+            parameters2.Add("@initDate", initDate);
+            parameters2.Add("@endDate", endDate);
 
             var items = await connection.QueryAsync<Supplier>(sql,parameters, commandType: CommandType.StoredProcedure);
-            var total = await connection.ExecuteScalarAsync<int>(count, parameters, commandType: CommandType.StoredProcedure);
+            var total = await connection.ExecuteScalarAsync<int>(count, parameters2, commandType: CommandType.StoredProcedure);
 
 
             results.Items = items.ToList();

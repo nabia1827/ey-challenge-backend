@@ -83,7 +83,7 @@ namespace Challenge.Services.WebApi.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpGet("DeleteSupplier")]
+        [HttpPatch("DeleteSupplier")]
         public async Task<IActionResult> DeleteSupplier([FromQuery] int supplierId)
         {
 
