@@ -17,6 +17,7 @@ namespace Challenge.Domain.Entity
         public string Website { get; set; }
         public string PhysicalAddress { get; set; }
         public int CountryId { get; set; }
+        public string CountryName { get; set; }
         public float AnnualRevenue { get; set; }
         public string LastEdited { get; set; }
         public bool SupplierActive { get; set; }
